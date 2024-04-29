@@ -115,6 +115,7 @@ metamorph.gui.creative.keys.onionskin=Toggle onion skins
 metamorph.gui.editor.shadow.all=Render all
 metamorph.gui.editor.shadow.noshadow=No shadow
 metamorph.gui.editor.shadow.onlyshadow=Only shaodws
+metamorph.gui.editor.betterlights_shadow=Shadow
 
 metamorph.gui.editor.hitbox.enabled=Custom hitbox
 metamorph.gui.editor.hitbox.size=Size

@@ -97,13 +97,19 @@ public class MorphUtils
             return false;
         }
 
-        boolean isShadowPass = OptifineHelper.isOptifineShadowPass();
-        boolean noBetterLightsShadows = BetterLightsHelper.isBetterLightsShadowPass() && !morph.getSettings().betterLightsShadow;
+        /* optifine and better lights shadow pass overlap, optifine shadow pass needs to be only optifine */
+        boolean isOptifineShadowPass = OptifineHelper.isOptifineShadowPass() && !BetterLightsHelper.isBetterLightsShadowPass();
+        boolean isBetterLightsShadowPass = BetterLightsHelper.isBetterLightsShadowPass();
+        boolean isNormalPass = !isOptifineShadowPass && !isBetterLightsShadowPass;
 
-        //TODO
+        boolean normalPass = morph.getSettings().shadowOption == 0 || morph.getSettings().shadowOption == 1;
+        boolean betterLightsShadows = morph.getSettings().betterLightsShadow;
+        boolean optifineShadows = morph.getSettings().shadowOption == 0 || morph.getSettings().shadowOption == 2;
+
         if (!GuiModelRenderer.isRendering()
-                && ((isShadowPass && morph.getSettings().shadowOption == 1 || !isShadowPass && morph.getSettings().shadowOption == 2)
-                || (noBetterLightsShadows)))
+                && ((isNormalPass && !normalPass)
+                || (isOptifineShadowPass && !optifineShadows)
+                || (isBetterLightsShadowPass && !betterLightsShadows)))
         {
             return false;
         }
