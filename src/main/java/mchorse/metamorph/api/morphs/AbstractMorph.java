@@ -277,7 +277,7 @@ public abstract class AbstractMorph
     @SideOnly(Side.CLIENT)
     public boolean renderHand(EntityPlayer player, EnumHand hand)
     {
-        return false;
+        return !getSettings().hands;
     }
 
     /* Update loop */
@@ -600,6 +600,7 @@ public abstract class AbstractMorph
     {
         this.displayName = morph.displayName;
         this.settings = morph.settings;
+        this.forcedSettings = morph.forcedSettings;
         this.hitbox.copy(morph.hitbox);
     }
 
@@ -675,15 +676,18 @@ public abstract class AbstractMorph
 
         this.name = tag.getString("Name");
         
-        boolean hasForcedSettings = tag.hasKey("ForcedSettings");
-    	this.forcedSettings = tag.getBoolean("ForcedSettings");
+        boolean hasForcedSettings = false;
+        if (tag.hasKey("ForcedSettings"))
+        {
+        	hasForcedSettings = tag.getBoolean("ForcedSettings");
+        }
 
         if (tag.hasKey("Settings"))
         {
             this.settings = new MorphSettings();
             this.settings.fromNBT(tag.getCompoundTag("Settings"));
             
-            if (!hasForcedSettings)
+            if (hasForcedSettings)
             {
             	this.forcedSettings = true;
             }
