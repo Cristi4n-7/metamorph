@@ -8,7 +8,7 @@ key.metamorph.action=Usar ação
 key.metamorph.creative_menu=Abrir menu morph do criativo
 key.metamorph.selector_menu=Abrir menu seletor de entidades
 key.metamorph.survival_menu=Abrir menu morph do sobrêvivencia
-key.metamorph.demorph=Demorph (Voltar para jogador)
+key.metamorph.demorph=Demorph (Voltar para o jogador)
 
 # GUI
 metamorph.gui.body_parts.pick=Selecionar Morph
@@ -96,7 +96,7 @@ metamorph.gui.survival.keys.focus_keybind=Tecla de foco
 metamorph.gui.editor.entity=Propriadades da entidade
 metamorph.gui.editor.settings=Opções do morph
 metamorph.gui.editor.keybind=Tecla
-metamorph.gui.editor.keybind_tooltip=Definir o atalho de teclado aqui permitirá que você se transforme nesse morph pressionando essa tecla no mundo ou no menu de metamorfose de sobrevivência
+metamorph.gui.editor.keybind_tooltip=Definir o atalho de teclado aqui permitirá que você se transforme nesse morph selecionado dessa tecla no mundo ou no menu de metamorfose de sobrevivência
 metamorph.gui.editor.display_name=Nome de exibição
 metamorph.gui.editor.health=Vida
 metamorph.gui.editor.speed=Velocidade
@@ -125,7 +125,7 @@ metamorph.gui.editor.hitbox.sneaking_height=Altura agachado da Hitbox
 metamorph.gui.editor.hitbox.eye=Posição dos olhos
 metamorph.gui.editor.hitbox.eye_tooltip=Fator de altura dos olhos da altura, onde 0 está na parte inferior e 1 na parte superior da hitbox
 
-metamorph.gui.label.label=Rótulo
+metamorph.gui.label.label=Título
 metamorph.gui.label.max_width=Largura máxima
 metamorph.gui.label.anchor=Âncora
 metamorph.gui.label.color=Cor do texto
@@ -211,10 +211,10 @@ metamorph.config.comments.morphs.render_bodypart_axis=When enabled, body part ax
 
 # OP access config
 op_access.config.metamorph.title=Metamorph
-op_access.config.metamorph.tooltip=Metamorph's OP access options
+op_access.config.metamorph.tooltip=Opções de acesso OP do Metamorph
 
-op_access.config.metamorph.entity_selectors=Entity selectors
-op_access.config.comments.metamorph.entity_selectors=Can non-OP players edit entity selectors?
+op_access.config.metamorph.entity_selectors=Seletores de entidades
+op_access.config.comments.metamorph.entity_selectors=Jogadores não-OP podem editar seletores de entidades?
 
 # Commands
 metamorph.commands.morph=Morph command. This command is responsible for morphing player into specified morph.\n\n/morph <username> [morph_name] [data_tag]
