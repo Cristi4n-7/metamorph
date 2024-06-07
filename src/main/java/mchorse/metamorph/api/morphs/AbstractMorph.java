@@ -108,8 +108,8 @@ public abstract class AbstractMorph
 	        	else
 	        	{
 	        		// Developer mode
-	        		throw new NullPointerException("needSettingsUpdate was not set to true when changing morph settings, or the settings was set to null directly when it shouldn't be");
-	        	}
+                    Metamorph.LOGGER.error("needSettingsUpdate was not set to true when changing morph settings, or the settings was set to null directly when it shouldn't be");
+                }
         	}
         	
             return;
