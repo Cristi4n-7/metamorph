@@ -101,15 +101,12 @@ public abstract class AbstractMorph
         {
         	if (this.settings == null)
         	{
-	        	if (FMLForgePlugin.RUNTIME_DEOBF)
+	        	if (!FMLForgePlugin.RUNTIME_DEOBF)
 	        	{
-	        		this.settings = MorphSettings.DEFAULT_MORPHED.copy();
-	        	}
-	        	else
-	        	{
-	        		// Developer mode
                     Metamorph.LOGGER.error("needSettingsUpdate was not set to true when changing morph settings, or the settings was set to null directly when it shouldn't be");
                 }
+
+                this.settings = MorphSettings.DEFAULT_MORPHED.copy();
         	}
         	
             return;
